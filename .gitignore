@@ -1,0 +1,14 @@
+# sistema
+.DS_Store
+Thumbs.db
+
+# editores
+.vscode/
+.idea/
+
+# logs / temporários
+*.log
+assets/img/*.b64
+
+# dependências (caso futuramente use build/deploy tooling)
+node_modules/

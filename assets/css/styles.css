@@ -1,0 +1,383 @@
+/* =====================================================================
+   Bernadete Leite Costura — LP Molde Calça Jogger
+   Estilos compartilhados (mobile-first, leve, sem framework)
+   ===================================================================== */
+
+:root {
+  /* superfícies */
+  --bg: #FBF1EA;
+  --card: #FFFFFF;
+  --card-border: #F4E2EC;
+  --divider: #F0E2E9;
+  --shadow-card: 0 16px 40px rgba(99, 42, 72, .12);
+
+  /* marca */
+  --pink: #DE1B7E;
+  --pink-dark: #C6156E;
+  --pink-soft: #FCE8F2;
+  --pink-soft-hover: #F9DCEC;
+  --pink-border: #F4C8DF;
+  --teal: #1F9FB0;
+  --teal-soft: #E8F6F8;
+
+  /* whatsapp / sucesso */
+  --green: #25A24A;
+  --green-dark: #1E8C3E;
+  --green-soft: #E7F7EE;
+  --green-check: #1FA463;
+
+  /* texto */
+  --text: #3B2A33;
+  --text-body: #6B5560;
+  --text-list: #4D3A43;
+  --muted: #9A8791;
+  --muted-2: #A8939D;
+  --placeholder: #B7A6AE;
+
+  /* inputs */
+  --input-border: #E7D6DF;
+  --input-bg: #FFFDFE;
+
+  /* aviso (TYP) */
+  --warn-bg: #FFF6EC;
+  --warn-border: #F6E4CC;
+  --warn-text: #7A6452;
+  --warn-accent: #C77A1E;
+
+  /* fontes */
+  --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Baloo 2', 'Nunito', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+/* ---------- layout ---------- */
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  padding: 16px 16px 44px;
+}
+.page--typ { padding-top: 24px; padding-bottom: 48px; }
+.container { width: 100%; max-width: 540px; }
+
+/* ---------- marca / logo ---------- */
+.brand { text-align: center; margin-bottom: 12px; }
+.brand img { width: 170px; max-width: 52%; margin: 0 auto; }
+.brand--typ { margin-bottom: 18px; }
+.brand--typ img { width: 190px; max-width: 56%; }
+
+/* ---------- card ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+}
+.grid { display: flex; flex-direction: column; gap: 18px; }
+.grid .card { margin: 0; }
+.card--form { padding: 22px 20px 24px; }
+.card--info { padding: 24px 20px 26px; }
+.card--typ { padding: 32px 22px 30px; text-align: center; }
+
+/* ---------- badge / pill ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--pink-soft);
+  color: var(--pink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: .04em;
+  padding: 7px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+.badge .emoji { font-size: 15px; }
+.pill {
+  display: inline-block;
+  background: var(--pink-soft);
+  color: var(--pink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: .04em;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+/* ---------- títulos ---------- */
+.title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 29px;
+  line-height: 1.14;
+  margin: 0 0 8px;
+  color: var(--text);
+  text-wrap: balance;
+}
+.title--lg { font-size: 32px; line-height: 1.15; margin: 0 0 12px; }
+.title .accent { color: var(--pink); }
+
+.lead { font-size: 18px; line-height: 1.4; margin: 0 0 18px; color: var(--text-body); }
+.lead--lg { font-size: 19px; line-height: 1.5; margin: 0 0 26px; text-wrap: pretty; }
+.lead strong { color: var(--teal); }
+
+/* ---------- formulário ---------- */
+.form { display: flex; flex-direction: column; gap: 13px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 16px; font-weight: 700; color: var(--text); }
+.field input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 18px;
+  padding: 15px 18px;
+  border: 2px solid var(--input-border);
+  border-radius: 14px;
+  outline: none;
+  color: var(--text);
+  background: var(--input-bg);
+  transition: border-color .15s ease;
+}
+.field input::placeholder { color: var(--placeholder); }
+.field input:focus { border-color: var(--pink); }
+
+/* ---------- botões ---------- */
+.btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.2;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background .15s ease;
+}
+.btn--primary {
+  margin-top: 4px;
+  font-size: 20px;
+  color: #fff;
+  background: var(--pink);
+  padding: 18px;
+  animation: ctaPulse 2.4s ease-in-out infinite;
+}
+.btn--primary:hover { background: var(--pink-dark); }
+.btn--secondary {
+  font-size: 19px;
+  color: var(--pink);
+  background: var(--pink-soft);
+  border: 2px solid var(--pink-border);
+  padding: 16px 18px;
+}
+.btn--secondary:hover { background: var(--pink-soft-hover); }
+.btn--whatsapp {
+  font-size: 20px;
+  color: #fff;
+  background: var(--green);
+  padding: 19px 18px;
+  animation: waPulse 2.2s ease-in-out infinite;
+}
+.btn--whatsapp:hover { background: var(--green-dark); }
+.btn[disabled] { opacity: .7; cursor: default; animation: none; }
+.btn .icon { font-size: 26px; line-height: 1; }
+
+.privacy { text-align: center; font-size: 14px; color: var(--muted); margin: 13px 0 0; line-height: 1.4; }
+.hint { font-size: 15px; color: var(--muted); margin: 14px 0 0; }
+
+/* ---------- imagem do produto ---------- */
+.product {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  border: 1px solid var(--divider);
+}
+.product img { display: block; width: 100%; }
+
+/* placeholder visível enquanto a imagem real não existe */
+.product__hint { display: none; }
+.product--empty {
+  background: var(--pink-soft);
+  border: 1px dashed var(--pink-border);
+}
+.product--empty .product__hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 240px;
+  padding: 24px 20px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--pink);
+}
+.product--empty .product__hint small {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--muted);
+}
+.product--empty .product__hint code {
+  background: #fff;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* ---------- lista de benefícios ---------- */
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 14px;
+  color: var(--text);
+}
+.benefits {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--text-list);
+}
+.bullet {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.bullet--pink { background: var(--pink-soft); color: var(--pink); font-size: 15px; }
+.bullet--teal { background: var(--teal-soft); color: var(--teal); font-weight: 700; }
+
+/* ---------- rodapé ---------- */
+.footer { text-align: center; font-size: 14px; color: var(--muted-2); margin: 20px 0 0; }
+.footer--typ { margin-top: 22px; }
+
+/* ---------- página de obrigado ---------- */
+.success-circle {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--green-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: popIn .5s ease-out;
+}
+.success-circle span { font-size: 50px; line-height: 1; color: var(--green-check); }
+
+.divider { height: 1px; background: var(--divider); margin: 28px 0; }
+
+.steps-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+  margin: 0 0 18px;
+  text-align: left;
+}
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+.steps li { display: flex; align-items: flex-start; gap: 14px; }
+.step-num {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-text { font-size: 18px; line-height: 1.4; color: var(--text-list); padding-top: 4px; }
+
+.notice {
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-top: 26px;
+  text-align: left;
+}
+.notice p { font-size: 16px; line-height: 1.45; color: var(--warn-text); margin: 0; }
+.notice .accent { color: var(--warn-accent); }
+
+/* =====================================================================
+   DESKTOP (>= 920px) — cards empilhados, só um pouco mais largos
+   ===================================================================== */
+@media (min-width: 920px) {
+  .page { padding: 40px 24px 56px; }
+  .page--typ { align-items: center; }
+  .container { max-width: 620px; }
+  .brand { margin-bottom: 22px; }
+  .brand img { width: 190px; }
+  .brand--typ img { width: 200px; }
+  .title { font-size: 32px; }
+}
+
+/* ---------- animações ---------- */
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 10px 24px rgba(222, 27, 126, .32), 0 0 0 0 rgba(222, 27, 126, .30); }
+  50% { box-shadow: 0 10px 24px rgba(222, 27, 126, .32), 0 0 0 12px rgba(222, 27, 126, 0); }
+}
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 10px 24px rgba(18, 140, 70, .32), 0 0 0 0 rgba(37, 211, 102, .40); }
+  50% { box-shadow: 0 10px 24px rgba(18, 140, 70, .32), 0 0 0 12px rgba(37, 211, 102, 0); }
+}
+@keyframes popIn {
+  0% { transform: scale(.5); }
+  70% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn--primary, .btn--whatsapp, .success-circle { animation: none; }
+}

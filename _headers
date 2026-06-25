@@ -1,0 +1,14 @@
+# Cache-Control para hosts estáticos (Netlify / Cloudflare Pages).
+# HTML sempre revalida; assets ficam em cache por mais tempo.
+
+/assets/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/assets/css/*
+  Cache-Control: public, max-age=86400
+
+/assets/js/*
+  Cache-Control: public, max-age=86400
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

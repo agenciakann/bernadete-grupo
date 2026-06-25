@@ -1,0 +1,57 @@
+# PRD — Captação de Leads "Molde Calça Jogger Infantil"
+**Cliente:** Bernadete Leite Costura
+**Documento:** Product Requirements Document
+**Status:** v1 — implementação inicial
+
+## 1. Visão geral
+Funil de captação de leads em 2 páginas (Landing Pages) cujo objetivo é
+transformar tráfego (anúncios/orgânico) em membros de um grupo do WhatsApp,
+oferecendo como isca digital o molde gratuito da calça jogger infantil
+(tamanhos 1 ao 14) + vídeo aula.
+
+## 2. Objetivo de negócio
+- **Métrica principal:** número de cadastros (leads) convertidos.
+- **Métrica secundária:** taxa de entrada no grupo do WhatsApp (TYP → grupo).
+- O lead fica registrado no Google Sheets (e-mail + WhatsApp) para
+  comunicação futura, mesmo que não entre no grupo.
+
+## 3. Público-alvo
+Pessoas que costuram (mães, avós, costureiras, artesãs) — majoritariamente
+em dispositivos móveis, vindas de redes sociais. Exige carregamento rápido
+e leitura confortável no celular.
+
+## 4. Fluxo do usuário
+1. Usuário chega na **LP de cadastro** (`index.html`).
+2. Preenche e-mail + WhatsApp e clica em "Quero baixar o molde grátis".
+3. Lead é salvo no Google Sheets e o usuário é redirecionado para a
+   **Página de Obrigado** (`obrigado.html`).
+4. Na TYP, clica no botão verde e entra no **grupo do WhatsApp**, onde o
+   molde está fixado.
+
+## 5. Requisitos funcionais
+| # | Requisito |
+|---|-----------|
+| RF1 | Formulário com 2 campos obrigatórios: e-mail e WhatsApp (com DDD). |
+| RF2 | Máscara automática no campo WhatsApp: `(00) 00000-0000`. |
+| RF3 | Ao enviar, gravar o lead no Google Sheets via Apps Script. |
+| RF4 | Após o envio, redirecionar para a TYP (mesmo se a rede falhar). |
+| RF5 | TYP com botão para o grupo do WhatsApp (link configurável). |
+| RF6 | Botão "Quero me cadastrar" rola a página de volta ao formulário. |
+| RF7 | Endpoint do Sheets e link do grupo centralizados em `config.js`. |
+
+## 6. Requisitos não-funcionais
+- **Leve:** sem framework, sem build; apenas HTML + CSS + JS vanilla.
+- **Responsivo / mobile-first:** layout centralizado, máx. 540px.
+- **Performático:** imagens otimizadas (WebP no logo), CSS único cacheável.
+- **Acessível:** labels nos inputs, contraste adequado, respeita
+  `prefers-reduced-motion`.
+
+## 7. Pendências de configuração (pós-implementação)
+- [ ] Publicar o Apps Script e colar a URL em `GOOGLE_SHEETS_ENDPOINT`.
+- [ ] Substituir o link placeholder do grupo em `WHATSAPP_GROUP_URL`.
+- [ ] (Opcional) Pixel/Tag de conversão (Meta/Google) nas duas páginas.
+
+## 8. Fora de escopo (v1)
+- Autenticação/área de membros.
+- Envio automático de e-mail (a entrega é feita pelo grupo do WhatsApp).
+- Painel administrativo (os dados ficam direto na planilha).
