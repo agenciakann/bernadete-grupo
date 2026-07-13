@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home3/makefa42/lp2.bernadeteleite.com
+    - /bin/mkdir -p "$DEPLOYPATH"
+    - /bin/cp -R index.html "$DEPLOYPATH"
+    - /bin/cp -R obrigado.html "$DEPLOYPATH"
+    - /bin/cp -R .htaccess "$DEPLOYPATH"
+    - /bin/cp -R assets "$DEPLOYPATH"
