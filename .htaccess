@@ -4,6 +4,17 @@
 
 RewriteEngine On
 
+# ------------------------------------------------------------
+# Protecao: o repositorio git fica dentro da pasta publica,
+# entao bloqueamos o acesso a arquivos internos pela web.
+# ------------------------------------------------------------
+# Pasta .git e .gitignore (codigo-fonte / historico)
+RewriteRule (^|/)\.git - [F,L]
+# Configs e documentacao do projeto (.cpanel.yml, .prd, .spec, .md, .gs)
+RewriteRule \.(yml|prd|spec|md|gs)$ - [F,L]
+# Pasta do Google Apps Script
+RewriteRule ^google-apps-script(/|$) - [F,L]
+
 # 1) /index e /index.html  ->  raiz "/"
 RewriteCond %{THE_REQUEST} \s/+index(\.html)?[\s?] [NC]
 RewriteRule ^ / [R=301,L]
