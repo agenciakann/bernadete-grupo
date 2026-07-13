@@ -8,7 +8,7 @@ window.APP_CONFIG = {
   GOOGLE_SHEETS_ENDPOINT: "https://script.google.com/macros/s/AKfycbxbycDny148-HaXwY21q8_RUwJED--vXmx199oaUbvC1HZ23-ChusKdHpZRBMWTDZpj/exec",
 
   // Página de obrigado (Thank You Page) para onde o cadastro redireciona.
-  TYP_URL: "obrigado.html",
+  TYP_URL: "obrigado",
 
   // Link do grupo do WhatsApp.
   WHATSAPP_GROUP_URL: "https://chat.whatsapp.com/CdZcvIwG8HaD1YI0ETmAfu?mode=gi_t",

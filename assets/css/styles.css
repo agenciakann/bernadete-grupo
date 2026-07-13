@@ -178,11 +178,11 @@ img { display: block; max-width: 100%; height: auto; }
   margin-top: 4px;
   font-size: 20px;
   color: #fff;
-  background: var(--pink);
+  background: var(--green);
   padding: 18px;
   animation: ctaPulse 2.4s ease-in-out infinite;
 }
-.btn--primary:hover { background: var(--pink-dark); }
+.btn--primary:hover { background: var(--green-dark); }
 .btn--secondary {
   font-size: 19px;
   color: var(--pink);

@@ -1,0 +1,21 @@
+# ============================================================
+# URLs limpas (sem .html) — Host Apache (mod_rewrite)
+# ============================================================
+
+RewriteEngine On
+
+# 1) /index e /index.html  ->  raiz "/"
+RewriteCond %{THE_REQUEST} \s/+index(\.html)?[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# 2) Redireciona a URL antiga com .html para a versao limpa (301, bom p/ SEO)
+#    Ex.: /obrigado.html  ->  /obrigado
+RewriteCond %{THE_REQUEST} \s/+([^?\s]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 3) Serve internamente o arquivo .html correspondente a URL limpa
+#    Ex.: barra mostra /obrigado, servidor entrega obrigado.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]

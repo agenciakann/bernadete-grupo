@@ -61,7 +61,7 @@
 
     if (btn) { btn.disabled = true; btn.textContent = "Enviando..."; }
 
-    var typ = cfg.TYP_URL || "obrigado.html";
+    var typ = cfg.TYP_URL || "obrigado";
     var endpoint = cfg.GOOGLE_SHEETS_ENDPOINT;
     var done = false;
     function redirect() { if (!done) { done = true; window.location.href = typ; } }
