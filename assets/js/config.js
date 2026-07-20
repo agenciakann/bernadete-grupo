@@ -11,7 +11,7 @@ window.APP_CONFIG = {
   TYP_URL: "obrigado",
 
   // Link do grupo do WhatsApp.
-  WHATSAPP_GROUP_URL: "https://chat.whatsapp.com/CdZcvIwG8HaD1YI0ETmAfu?mode=gi_t",
+  WHATSAPP_GROUP_URL: "https://chat.whatsapp.com/HXbsfli20MSJnAx9Ngetdn?mode=gi_t",
 
   // Tempo máximo (ms) de espera pelo envio antes de redirecionar mesmo assim.
   REDIRECT_FALLBACK_MS: 1500
